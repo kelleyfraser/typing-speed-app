@@ -1,2 +1,58 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Nunito:wght@200;400;700&family=Source+Code+Pro:wght@200;300&display=swap');
+
+// Override default variables 
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/utilities";
+
+$utilities: map-merge($utilities,
+    ("width": map-merge(map-get($utilities, "width"),
+        (values: map-merge(map-get(map-get($utilities, "width"), "values"),
+            (85: 85%,
+              90: 90%)),
+        ),
+      ),
+    ));
+
+$theme-colors: (
+  "primary": #001C55,
+  "blue": $primary
+);
+
+$primary: #001C55;
+
 // Import Bootstrap
 @import '~bootstrap/scss/bootstrap.scss';
+
+.app {
+  .btn-icon {
+    font-size: 1.5em;
+  }
+
+  .btn-icon:hover {
+    cursor: pointer;
+  }
+}
+
+
+.toDoHeader-container {
+  height: 125px;
+  background-color: $primary;
+  color: white;
+  padding: 10px 20px;
+
+  .appName {
+    margin-top: 35px;
+  }
+
+  .btn-icon {
+    margin-left: 98%;
+    transition: all 0.3s;
+  }
+
+  .btn-icon:hover {
+    transform: rotate(45deg);
+  }
+}
