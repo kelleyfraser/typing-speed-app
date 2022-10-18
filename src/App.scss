@@ -1,5 +1,5 @@
 // Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Nunito:wght@200;400;700&family=Source+Code+Pro:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Courier+Prime&family=Nunito:wght@200;400;700&family=Source+Code+Pro:wght@200;300&display=swap');
 
 // Override default variables 
 @import "../node_modules/bootstrap/scss/functions";
@@ -26,18 +26,12 @@ $primary: #001C55;
 // Import Bootstrap
 @import '~bootstrap/scss/bootstrap.scss';
 
-.app {
-  .btn-icon {
-    font-size: 1.5em;
-  }
 
-  .btn-icon:hover {
-    cursor: pointer;
-  }
+.btn-icon:hover {
+  cursor: pointer;
 }
 
-
-.toDoHeader-container {
+.header-container {
   height: 125px;
   background-color: $primary;
   color: white;
@@ -54,5 +48,109 @@ $primary: #001C55;
 
   .btn-icon:hover {
     transform: rotate(45deg);
+  }
+}
+
+.timer-box {
+  border-radius: 10px;
+  border: 1px solid #bfbfbf;
+  width: 100px;
+  margin: 25px auto;
+
+  .time {
+    padding: 12px 6px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.wrapper {
+  max-width: 850px;
+  padding: 0 35px;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+
+  .input-field {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 850px;
+    padding: 0 35px;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+  }
+
+  .content-box {
+    padding: 13px 15px 0;
+    border-radius: 10px;
+    border: 1px solid #bfbfbf;
+    max-width: 850px;
+  }
+
+  .typing-text::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .typing-text {
+    p {
+      font-family: 'Courier Prime';
+      font-size: 18px;
+      text-align: justify;
+
+      span {
+        position: relative;
+        border-left: 2px solid #ffffff;
+      }
+
+      .correct {
+        color: #56964f;
+      }
+
+      .incorrect {
+        color: #cb3439;
+        outline: 1px solid #fff;
+        background: #ffc0cb;
+        border-radius: 4px;
+      }
+
+      .active {
+        color: #17a2b8;
+        border-left: 2px solid #17a2b8;
+        animation: blink 1.2s ease-in-out infinite;
+      }
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-left: 2px solid #ffffff;
+    }
+  }
+}
+
+.score-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  margin: 0 25px;
+}
+
+.btn-container {
+  max-width: 850px;
+  text-align: center;
+  margin: 0 auto;
+
+  button {
+    border: none;
+    background: $primary;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+    margin: 10px 25px;
   }
 }
